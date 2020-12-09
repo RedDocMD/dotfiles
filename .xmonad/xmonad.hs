@@ -53,6 +53,7 @@ myWorkspaces    = ["web","a","b","c","long","mx","sfx"]
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((0, xK_Print), (spawn "scrot"))
     , ((mod4Mask, xK_return), (spawn myTerminal))
+	, ((mod4Mask .|. shiftMask, xK_return), (spawn "rofi -show run))
     , ((mod4Mask, xK_c), (spawn "xterm"))
     , ((mod4Mask, xK_q), (spawn "/usr/bin/bash -c 'notify-send -i time \"Right now, it is\" \"$(date \"+%-I:%M %p, %A %B %d, %Y\")\n$(acpi | sed \"s/Battery 0://\")\"'"))
     , ((mod4Mask, xK_e), (windows $ W.greedyView "mx") >> spawn "alacritty -t mutt -e tmux new-session -A -s mail /bin/bash -ic \"mutt -e 'source ~/.mutt/account.fm'\"")
