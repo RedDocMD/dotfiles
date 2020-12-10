@@ -22,10 +22,10 @@ line-size = 2
 padding = 1
 module-margin = 1
 
-font-0 = "Noto Sans Mono:size=10;1"
-font-1 = "Noto Sans Mono:size=10;1"
-font-2 = "Noto Sans Symbols:size=10;1"
-font-3 = "Noto Sans Symbols2:size=10;1"
+font-0 = "mononoki Nerd Font Mono:size=10;1"
+font-1 = "mononoki Nerd Font Mono:size=10;1"
+font-2 = "mononoki Nerd Font:size=10;1"
+font-3 = "mononoki Nerd Font:size=10;1"
 
 modules-left = date bspwm xwindow
 modules-center =
@@ -80,7 +80,7 @@ label = %percentage_used:2%%
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = wlo1 
 interval = 5.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -143,6 +143,25 @@ empty-notifications = false
 ;label = %{u#ff9900 +u} %notifications% %{u-}
 label = %{u#0099ff +u} 📫 %{u-}
 interval = 10
+
+[module/xworkspaces]
+type = internal/xworkspaces
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; Create click handler used to focus desktop
+; Default: true
+enable-click = false
+
+; Create scroll handlers used to cycle desktops
+; Default: true
+enable-scroll = false
 
 [settings]
 screenchange-reload = true
