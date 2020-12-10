@@ -2,7 +2,7 @@
 background = #222
 background-alt = #444
 foreground = #dfdfdf
-foreground-alt = #888
+foreground-alt = #c2c0c0
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -18,18 +18,19 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 border-size = 0
+border-bottom-size = 11
 line-size = 2
 padding = 1
 module-margin = 1
 
-font-0 = "mononoki Nerd Font Mono:size=10;1"
-font-1 = "mononoki Nerd Font Mono:size=10;1"
-font-2 = "mononoki Nerd Font:size=10;1"
-font-3 = "mononoki Nerd Font:size=10;1"
+font-0 = "Noto Sans Mono:size=10;1"
+font-1 = "Noto Sans Mono:size=10;1"
+font-2 = "Noto Sans Symbols:size=10;1"
+font-3 = "Noto Sans Symbols2:size=10;1"
 
 modules-left = date bspwm xwindow
 modules-center =
-modules-right = wlan cpu battery
+modules-right = pulseaudio wlan cpu battery
 
 tray-position = right
 tray-padding = 2
@@ -162,6 +163,23 @@ enable-click = false
 ; Create scroll handlers used to cycle desktops
 ; Default: true
 enable-scroll = false
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+format-volume = <label-volume>
+label-volume = %percentage%%
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
 
 [settings]
 screenchange-reload = true
