@@ -106,3 +106,4 @@ export PATH=/home/deep/software/node-v14.13.1-linux-x64/bin:$PATH
 export CLASSPATH=.:/home/deep/software/antlr-4.9-complete.jar:$CLASSPATH
 export PATH=/home/deep/software/flutter/bin:$PATH
 
+export EDITOR=nvim
