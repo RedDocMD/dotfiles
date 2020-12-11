@@ -30,7 +30,7 @@ font-3 = "Noto Sans Symbols2:size=10;1"
 
 modules-left = date bspwm xwindow
 modules-center =
-modules-right = pulseaudio wlan cpu battery
+modules-right = pulseaudio wlan cpu memory
 
 tray-position = right
 tray-padding = 2
