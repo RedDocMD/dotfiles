@@ -115,7 +115,7 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 . /usr/share/autojump/autojump.sh
 
-export TERM=xterm-256color
+# export TERM=screen-256color
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
