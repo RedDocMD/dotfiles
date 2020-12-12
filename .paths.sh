@@ -107,3 +107,4 @@ export CLASSPATH=.:/home/deep/software/antlr-4.9-complete.jar:$CLASSPATH
 export PATH=/home/deep/software/flutter/bin:$PATH
 
 export EDITOR=nvim
+export NNN_PLUG='m:nmount;p:preview-tui;t:treeview;s:suedit'
