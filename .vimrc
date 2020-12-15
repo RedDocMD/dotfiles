@@ -9,6 +9,7 @@ Plug 'ciaranm/securemodelines'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tpope/vim-surround'
+"Plug 'kamykn/spelunker.vim'
 
 " GUI plugins
 Plug 'itchyny/lightline.vim'
@@ -40,7 +41,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
-Plug 'takac/vim-hardtime'
+"Plug 'takac/vim-hardtime'
 
 call plug#end()
 
@@ -70,7 +71,7 @@ let g:rustfmt_autosave = 1
 
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
-  \ 'coc-rls',
+  \ 'coc-rust-analyzer',
   \ 'coc-json',
   \ 'coc-go'
   \ ]
@@ -83,7 +84,7 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
 
-let g:hardtime_default_on = 1
+"let g:hardtime_default_on = 1
 
 let g:gtk_nocache=[0x00000000, 0xfc00ffff, 0xf8000001, 0x78000001]
 
@@ -276,6 +277,10 @@ nmap <leader>; :Buffers<CR>
 
 " Quick-save
 nmap <leader>w :w<CR>
+
+set mouse=a " Enable mouse usage (all modes) in terminals
+set shortmess+=c " don't give |ins-completion-menu| messages.
+"set nospell
 
 "############################
 "#     Keybindings
