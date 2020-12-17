@@ -270,6 +270,7 @@ set noexpandtab
 
 set undodir=~/.vimdid
 set undofile
+set nofoldenable
 
 " Open hotkeys
 map <C-p> :Files<CR>
