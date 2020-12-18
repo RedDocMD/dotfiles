@@ -25,7 +25,7 @@ bspc rule -a polybar border=off manage=off
 bspc rule -a ulauncher focus=on
 bspc rule -a vlc desktop='^9' state=fullscreen
 
-compton &
+picom &
 nitrogen --restore &
 $HOME/.config/polybar/launch.sh &
 wmname LG3D &
