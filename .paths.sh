@@ -108,3 +108,4 @@ export PATH=/home/deep/software/flutter/bin:$PATH
 
 export EDITOR=nvim
 export NNN_PLUG='m:nmount;p:preview-tui;t:treeview;s:suedit'
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
