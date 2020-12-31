@@ -8,3 +8,4 @@ picom &
 nitrogen --restore &
 lxqt-policykit-agent &
 volumeicon &
+udiskie &

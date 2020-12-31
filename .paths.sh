@@ -98,8 +98,8 @@ export PATH=/home/deep/software/go/bin:$PATH
 export PATH=/home/deep/.local/bin:$PATH
 export ADB_TOOL_PATH=/home/deep/software/platform-tools
 export PATH=/home/deep/.emacs.d/bin:$PATH
-export JAVA_HOME=/home/deep/software/jdk1.8.0_261
-export PATH=$JAVA_HOME/bin:$PATH
+#export JAVA_HOME=/home/deep/software/jdk1.8.0_261
+#export PATH=$JAVA_HOME/bin:$PATH
 export ANDROID_HOME=/home/deep/Android/Sdk
 export PATH=/home/deep/software/node-v14.15.3-linux-x64/bin:$PATH
 
