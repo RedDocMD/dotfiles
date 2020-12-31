@@ -9,3 +9,4 @@ nitrogen --restore &
 lxqt-policykit-agent &
 volumeicon &
 udiskie &
+redshift-gtk &
