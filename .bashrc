@@ -120,3 +120,10 @@ source ~/.paths.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source "$HOME/.cargo/env"
+
+source /home/deep/.config/broot/launcher/bash/br
+
+# tab multiplexer configuration: https://github.com/austinjones/tab-rs/
+source "/home/deep/.local/share/tab/completion/tab.bash"
+# end tab configuration
+

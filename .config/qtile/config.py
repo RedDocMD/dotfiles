@@ -59,7 +59,12 @@ keys = [
 ]
 
 group_names = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X']
-groups = [Group(name) for name in group_names]
+groups = []
+for (i, name) in enumerate(group_names):
+    if i == 8 or i == 9:
+        groups.append(Group(name, layouts = [layout.Floating()]))
+    else:
+        groups.append(Group(name))
 
 for i, grp in enumerate(groups):
     keys.extend([

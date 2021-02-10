@@ -18,7 +18,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 border-size = 0
-border-bottom-size = 11
+border-bottom-size = 13
 line-size = 2
 padding = 1
 module-margin = 1
@@ -28,9 +28,9 @@ font-1 = "Noto Sans Mono:size=10;1"
 font-2 = "Noto Sans Symbols:size=10;1"
 font-3 = "Noto Sans Symbols2:size=10;1"
 
-modules-left = date bspwm xwindow
+modules-left = date xworkspaces xwindow
 modules-center =
-modules-right = wlan cpu memory
+modules-right = pulseaudio wlan cpu memory
 
 tray-position = right
 tray-padding = 2
@@ -154,7 +154,7 @@ type = internal/xworkspaces
 ; on different bars
 ;
 ; Default: false
-pin-workspaces = true
+; pin-workspaces = true
 
 ; Create click handler used to focus desktop
 ; Default: true
@@ -163,6 +163,20 @@ enable-click = false
 ; Create scroll handlers used to cycle desktops
 ; Default: true
 enable-scroll = false
+
+label-active = %name%
+label-active-foreground = #ffffff
+label-active-background = #3f3f3f
+label-active-underline = #fba922
+label-active-padding = 1
+label-empty-padding = 1
+label-occupied-padding = 1
+label-urgent-padding = 1
+label-occupied-underline = #555555
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-underline = #9b0a20
+label-empty-foreground = #55
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -180,6 +194,24 @@ label-volume = %percentage%%
 ; Interval for volume increase/decrease (in percent points)
 ; Default: 5
 interval = 5
+
+[module/pulseaudio-control]
+type = custom/script
+tail = true
+format-underline = ${colors.cyan}
+label-padding = 2
+label-foreground = ${colors.foreground}
+
+# Icons mixed from Font Awesome 5 and Material Icons
+# You can copy-paste your options for each possible action, which is more
+# trouble-free but repetitive, or apply only the relevant ones (for example
+# --sink-blacklist is only needed for next-sink).
+exec = pulseaudio-control --icons-volume " , " --icon-muted " " --sink-nicknames-from "device.description" --sink-nickname "alsa_output.pci-0000_00_1b.0.analog-stereo:  Speakers" --sink-nickname "alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo:  Headphones" listen
+click-right = exec pavucontrol &
+click-left = pulseaudio-control togmute
+click-middle = pulseaudio-control --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-sink
+scroll-up = pulseaudio-control --volume-max 130 up
+scroll-down = pulseaudio-control --volume-max 130 down
 
 [settings]
 screenchange-reload = true
